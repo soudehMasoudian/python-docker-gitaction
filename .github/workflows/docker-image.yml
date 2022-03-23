@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest 
      
     steps: 
+    - name: Install docker
+      run: |
+        pip install --ignore-installed docker docker-compose
     - uses: actions/checkout@v2
     - name: Build the stack
       run: docker-compose up -d
