@@ -10,7 +10,7 @@ jobs:
     steps: 
     - name: Install docker
       run: |
-        pip install docker-compose
+        pip install docker docker-compose
     - uses: actions/checkout@v2
     - name: Build the stack
       run: docker-compose up -d
