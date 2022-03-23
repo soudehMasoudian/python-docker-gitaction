@@ -6,14 +6,9 @@ jobs:
     name: Pytest in Pipenv
     # runs on the latest Ubuntu
     runs-on: ubuntu-latest 
-    # runs within your Docker container
-    container:
-      image: docker://python:3-alpine
-    # checkout your code from your repository
-    # and runs pytest in your pipenv environment
-    steps:
+     
+    steps: 
     - uses: actions/checkout@v2
-    
     - name: Build the stack
       run: docker-compose up -d
       
@@ -25,3 +20,8 @@ jobs:
     - name: Test with pytest
       run: |
           python -m unittest discover tests
+    # runs within your Docker container
+    container:
+      image: docker://python:3-alpine
+    # checkout your code from your repository
+    # and runs pytest in your pipenv environment
